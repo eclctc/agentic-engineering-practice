@@ -31,6 +31,24 @@ The server starts on port 3000. Visit `http://localhost:3000/health` to confirm 
 
 ---
 
+## Layout
+
+```
+src/
+  index.js       app setup and router registration
+  routes/        thin Express routers, one per resource
+  services/      business rules, call queries
+  db/            connection, schema, seed
+  db/queries/    all SQL, one module per resource
+  middleware/    auth, validation, logging, error handling
+  utils/         constants, validators, helpers
+tests/           <resource>.test.js (Jest + supertest)
+```
+
+Routes call services, services call queries.
+
+---
+
 ## npm scripts
 
 | Script | What it does |
